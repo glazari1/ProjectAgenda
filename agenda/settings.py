@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
+from django.contrib.messages import constants
 import os
 from pathlib import Path
 from decouple import config
@@ -23,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = config('key.env')
+SECRET_KEY = config('local_settings.py')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -142,7 +143,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  # type: ignore
 MEDIA_URL = 'media/'
 
 # Mensagens
-from django.contrib.messages import constants
 
 MESSAGE_TAGS = {
     constants.ERROR: 'alert-danger',

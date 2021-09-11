@@ -1,6 +1,5 @@
 venv
 env
-.env
 .vscode
 
 # Byte-compiled / optimized / DLL files
